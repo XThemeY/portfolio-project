@@ -7,6 +7,19 @@
     background: var(--yellow);
 }
 
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 3px dotted var(--focusOutline);
+}
+input {
+    &:focus-visible {
+        outline: none;
+    }
+}
+
 html {
     scroll-behavior: smooth;
     font-size: 62.5%;
@@ -23,10 +36,12 @@ body {
 }
 
 a {
+    display: inline-block;
     text-decoration: none;
+    white-space: nowrap;
     color: var(--link);
     font-size: 1.8rem;
-    transition: 0.5s;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
     &:hover {
         color: var(--linkHover);
     }
@@ -87,23 +102,21 @@ button {
 }
 
 .container {
-    width: 100%;
-    max-width: 320px;
+    position: relative;
+    z-index: 10;
+    max-width: 1140px;
     padding: 0 15px;
     margin: 0 auto;
 
     @media (min-width: 576px) {
-        max-width: 540px;
     }
 
     @media (min-width: 768px) {
-        max-width: 738px;
+        padding: 0 30px;
     }
     @media (min-width: 992px) {
-        max-width: 960px;
     }
     @media (min-width: 1200px) {
-        max-width: 1140px;
         padding: 0;
     }
 }
@@ -117,6 +130,7 @@ button {
 .underline {
     position: relative;
     width: fit-content;
+
     &::before {
         content: "";
         position: absolute;
@@ -126,25 +140,24 @@ button {
         bottom: 0px;
         z-index: -1;
         background-color: var(--underline);
-        transition: 0.5s;
+        transition: background-color 0.3s ease-in-out;
     }
 }
 
 .btn {
     display: inline-block;
     min-height: 54px;
-    padding: 0 30px;
     background-color: var(--btn);
     line-height: 54px;
     border-radius: 30.5px;
-    font-size: 2rem;
-    font-weight: 700;
     text-align: center;
     transition: 0.5s;
 
     a {
-        display: block;
+        padding: 0 50px;
         color: var(--btnLink);
+        font-size: 2rem;
+        font-weight: 700;
     }
 
     &:hover {
@@ -152,6 +165,35 @@ button {
     }
     &:active {
         background-color: var(--btnActive);
+    }
+
+    &.project-card__btn {
+        position: absolute;
+        min-height: 52px;
+        line-height: 52px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 26px;
+        background-color: var(--white);
+
+        &:hover {
+            background-color: var(--projectColor);
+        }
+
+        &:active {
+            background-color: var(--projectActive);
+        }
+
+        a {
+            padding: 0 30px;
+            color: var(--projectColor);
+            font-size: 2.2rem;
+            font-weight: 900;
+            &:hover {
+                color: var(--white);
+            }
+        }
     }
 
     @media (min-width: 576px) {
@@ -169,6 +211,8 @@ button {
 
 .btn-outline {
     display: none;
+    min-height: 57px;
+    line-height: 57px;
     border: 4px solid var(--btnOutline);
     background-color: transparent;
     transition: 0.5s;
@@ -195,5 +239,216 @@ button {
             border-color: var(--btnOutlineActive);
             color: var(--btnOutlineActive);
         }
+    }
+}
+
+.nav-underline {
+    a {
+        position: relative;
+        font-weight: 700;
+        font-size: 2rem;
+        color: var(--black);
+        &::before {
+            display: block;
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 10px;
+            left: 50%;
+            bottom: 0;
+            z-index: -1;
+            background-color: var(--underline);
+            transition: width 0.3s ease-in-out;
+            transform: translateX(-50%);
+        }
+
+        &:hover::before {
+            width: 110%;
+        }
+    }
+}
+
+.email {
+    a {
+        color: var(--black);
+
+        &:hover {
+            color: var(--blue);
+        }
+        &:active {
+            color: var(--red);
+        }
+    }
+    &.underline {
+        &::before {
+            height: 2px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            background-color: var(--black);
+        }
+        &:hover::before {
+            background-color: var(--blue);
+        }
+        &:active::before {
+            background-color: var(--red);
+        }
+    }
+}
+
+.projects-ul {
+    a {
+        font-size: 2.8rem;
+        font-weight: 900;
+        color: #8fa5ae;
+
+        &:hover {
+            color: var(--linkActive);
+        }
+    }
+
+    li.projects-ul-active {
+        a {
+            color: var(--black);
+        }
+    }
+}
+
+.project-card__poster {
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+
+    &::before {
+        display: block;
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: var(--yellow);
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+        cursor: pointer;
+    }
+    &:hover::before {
+        opacity: 85%;
+    }
+}
+
+.project-card__desc {
+    a {
+        font-size: 2.6rem;
+        font-weight: 700;
+        color: var(--linkHover);
+        &.underline {
+            &::before {
+                height: 2px;
+                left: 0px;
+                right: 0px;
+                bottom: 3px;
+                background-color: transparent;
+            }
+            &:hover::before {
+                background-color: var(--linkHover);
+            }
+        }
+    }
+
+    p {
+        font-size: 2rem;
+        font-weight: 300;
+    }
+}
+
+.work-item {
+    width: fit-content;
+    font-size: 2.6rem;
+    font-weight: 800;
+    user-select: none;
+    p {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+    h3.underline {
+        &::before {
+            left: 0;
+            right: 0;
+            bottom: 4px;
+        }
+    }
+    span {
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+
+    &:hover {
+        h3.underline {
+            &::before {
+                background-color: var(--underlineHover);
+            }
+        }
+    }
+}
+
+.contact-form {
+}
+
+.form-item {
+    position: relative;
+    width: fit-content;
+    height: 50px;
+    input[type="text"] {
+        border: none;
+        height: 50px;
+        width: 390px;
+        padding: 0 6px;
+        color: var(--black);
+        font-size: 2rem;
+        font-weight: 700;
+        font-family: var(--fr);
+        border-bottom: 2px solid #bcbcbc;
+
+        &:active,
+        &:focus {
+            border-bottom-color: var(--underlineHover);
+        }
+    }
+    span {
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 10px;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #bcbcbc;
+        transition: 0.5s ease-in-out;
+
+        &.form__item-active {
+            left: 5px;
+            top: -12px;
+            font-size: 1.6rem;
+            color: #ed9626;
+        }
+    }
+}
+
+.btn__next-project {
+    width: 555px;
+    height: 80px;
+    padding: 0 30px;
+    background-color: #333333;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: var(--white);
+    text-align: center;
+    letter-spacing: 0.2px;
+    font-size: 2.2rem;
+    line-height: 80px;
+
+    &:hover {
+        background-color: #656565;
+    }
+    &:active {
+        background-color: #141414;
     }
 }
