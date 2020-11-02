@@ -3,7 +3,7 @@ header {
     margin: 0 auto;
     padding-top: 60px;
     padding-bottom: 240px;
-    background: center repeat-y var(--bgLines);
+    background: center repeat-y url(@bglines);
 }
 
 .nav-bar-fixed {
@@ -16,7 +16,7 @@ header {
     max-width: 1430px;
     margin: 0 auto;
     z-index: 100;
-    background: center repeat-y var(--bgLines);
+    background: center repeat-y url(@bglines);
 }
 
 .nav-bar__logo {
@@ -26,7 +26,7 @@ header {
         transform: scale(1.1);
     }
     a {
-        color: var(--black);
+        color: @black;
         font-size: 4.2rem;
         text-transform: uppercase;
         font-weight: 700;
@@ -43,12 +43,12 @@ header {
     user-select: none;
     li {
         a {
-            color: var(--black);
+            color: @black;
             font-weight: 700;
         }
-        &:not(:last-child) {
-            margin-right: 80px;
-        }
+    }
+    li + li {
+        margin-left: 80px;
     }
 }
 
@@ -57,21 +57,11 @@ header {
     justify-content: center;
     a {
         font-size: 3rem;
-        color: var(--black);
+        color: @black;
+    }
 
-        &:not(:last-child) {
-            margin-right: 20px;
-        }
-
-        &.icon-vk:hover {
-            color: #45668e;
-        }
-        &.icon-linkedin-in:hover {
-            color: #6cc644;
-        }
-        &.icon-github:hover {
-            color: #0077b5;
-        }
+    a + a {
+        margin-left: 20px;
     }
 }
 
@@ -104,7 +94,7 @@ header {
 }
 
 .content-text {
-    height: fit-content;
+    width: 50%;
 }
 .content__desc {
     margin-bottom: 35px;
@@ -117,11 +107,30 @@ header {
 }
 
 .content-pic {
-    img {
+    width: 50%;
+    position: relative;
+    .image {
+        position: relative;
         width: 457px;
         height: 410px;
         margin-left: auto;
         margin-right: 0;
+        &:before {
+            content: "";
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            width: inherit;
+            height: inherit;
+
+            background-image: linear-gradient(
+                90deg,
+                #f4f8f9 0%,
+                rgba(244, 248, 249, 0) 100%
+            );
+            opacity: 0.5;
+            z-index: -1;
+        }
     }
 }
 
@@ -177,9 +186,51 @@ header {
     margin-right: 40px;
 }
 
-.social-icons {
+.skills__icons {
     margin-bottom: 30px;
     a {
+        color: @black;
         font-size: 5rem;
     }
+
+    a + a {
+        margin-left: 30px;
+    }
+}
+
+a {
+    .icon-vk {
+        color: white;
+        vertical-align: bottom;
+        border-radius: 50%;
+        background-color: black;
+        font-size: 3rem;
+        width: 50px;
+        height: 50px;
+
+        &:before {
+            display: flex;
+            height: inherit;
+            justify-content: center;
+            align-items: center;
+        }
+        &:hover {
+            background-color: #4680c2;
+        }
+    }
+}
+
+.icon-telegram:hover {
+    color: #2ca5e0;
+}
+.icon-github:hover {
+    color: #6cc644;
+}
+
+.icon-linkedin-in:hover {
+    color: #0077b5;
+}
+
+.icon-facebook:hover {
+    color: #1877f2;
 }
