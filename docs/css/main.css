@@ -59,15 +59,6 @@ a .underline:hover::before {
 a .underline:active::before {
   background-color: #ed574f;
 }
-a.btn {
-  padding: 0px 40px;
-  color: #000000;
-  font-size: 2rem;
-  font-weight: 700;
-}
-a.btn.btn-outline {
-  padding: 0px 40px;
-}
 ul {
   margin: 0;
   padding: 0;
@@ -82,6 +73,10 @@ h6,
 p {
   margin: 0;
   padding: 0;
+}
+.title-vs {
+  font-size: 2.33rem;
+  font-weight: 800;
 }
 .title-s {
   font-size: 3rem;
@@ -105,17 +100,17 @@ p {
   background-color: #ed574f;
 }
 .title-m {
-  font-size: 5.75rem;
-  font-weight: 900;
+  font-size: 4rem;
+  font-weight: 700;
 }
-.title-m.underline::before {
+.title-b {
+  font-size: 6.4rem;
+  font-weight: 800;
+}
+.title-b.underline::before {
   left: 0;
   right: 0;
   bottom: 15px;
-}
-.title-b {
-  font-size: 3.75rem;
-  font-weight: 700;
 }
 img {
   max-width: 100%;
@@ -171,13 +166,20 @@ button {
 }
 .btn {
   display: inline-block;
-  height: 56px;
+  height: 62px;
+  padding: 0px 40px;
   border: 2px solid #fbdc4d;
   background-color: #fbdc4d;
-  line-height: 54px;
+  line-height: 58px;
   border-radius: 30.5px;
   text-align: center;
   transition: 0.5s ease-in-out;
+  color: #000000;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+.btn.btn-outline {
+  padding: 0px 37px;
 }
 .btn:hover {
   background-color: #ffd200;
@@ -188,7 +190,7 @@ button {
 .btn.item-img__btn {
   opacity: 0;
   position: absolute;
-  min-height: 52px;
+  height: 52px;
   line-height: 48px;
   left: 50%;
   top: 50%;
@@ -199,7 +201,6 @@ button {
   vertical-align: bottom;
   padding: 0px 34px;
   color: #ea736d;
-  font-size: 2.2rem;
   font-weight: 900;
   z-index: 10;
 }
@@ -212,16 +213,20 @@ button {
   background-color: #d4423b;
   border: 2px solid #d4423b;
 }
+@media (min-width: 768px) {
+  .btn {
+    font-size: 2.2rem;
+  }
+}
 @media (min-width: 1200px) {
   .btn {
     font-size: 2.2rem;
-    line-height: 52px;
+    line-height: 58px;
   }
 }
 .btn-outline {
   display: none;
-  height: 58px;
-  line-height: 50px;
+  line-height: 54px;
   border: 4px solid #464646;
   background-color: transparent;
   transition: 0.5s;
@@ -239,6 +244,7 @@ button {
 @media (min-width: 1200px) {
   .btn-outline {
     display: inline-block;
+    line-height: 54px;
   }
   .btn-outline:hover {
     background-color: transparent;
@@ -273,6 +279,10 @@ button {
 .nav-underline a:hover::before {
   width: 110%;
 }
+.email {
+  position: absolute;
+  top: 171px;
+}
 .email a {
   color: #000000;
   font-size: 2.1rem;
@@ -284,10 +294,10 @@ button {
   color: #ea655f;
 }
 .email .underline::before {
-  height: 2px;
+  height: 1px;
   left: 0px;
   right: 0px;
-  bottom: 0px;
+  bottom: 3px;
   background-color: #000000;
 }
 .email .underline:hover::before {
@@ -297,7 +307,7 @@ button {
   background-color: #ea655f;
 }
 .projects-ul a {
-  font-size: 2.55rem;
+  font-size: 2.8rem;
   font-weight: 800;
   color: #8fa5ae;
 }
@@ -388,11 +398,11 @@ header {
   max-width: 1600px;
   margin: 0 auto;
   padding-top: 60px;
-  padding-bottom: 220px;
+  padding-bottom: 240px;
   background: center repeat-y url("../img/header/bg/bg-lines.jpg");
 }
 .nav-bar-fixed {
-  padding: 0 15px;
+  padding: 0px 15px;
   min-height: 70px;
   display: flex;
   justify-content: space-between;
@@ -431,7 +441,7 @@ header {
   font-weight: 700;
 }
 .nav-bar__nav li + li {
-  margin-left: 80px;
+  margin-left: 79px;
 }
 .social-icons {
   display: flex;
@@ -449,7 +459,7 @@ header {
 }
 .main-content {
   display: flex;
-  margin-top: 120px;
+  margin-top: 170px;
 }
 .content {
   width: 50%;
@@ -474,23 +484,21 @@ header {
   width: 50%;
 }
 .content__desc {
-  margin-bottom: 30px;
+  margin-bottom: 33px;
 }
 .content__desc p {
   color: #393f47;
   font-size: 2.4rem;
   font-weight: 500;
-  line-height: 33px;
+  line-height: 36px;
 }
 .content-pic {
   width: 50%;
-  position: relative;
-  padding-left: 57px;
-  padding-top: 20px;
+  display: flex;
+  justify-content: flex-end;
 }
 .content-pic .image {
   position: relative;
-  width: 415px;
 }
 .content-pic .image:before {
   content: "";
@@ -504,48 +512,46 @@ header {
   z-index: -1;
 }
 .content__btn .btn:not(:last-child) {
-  margin-right: 10px;
+  margin-right: 15px;
 }
 .header__bg-img {
-  margin-top: -150px;
+  margin-top: -130px;
 }
 .skills-content {
   display: flex;
   justify-content: space-between;
 }
 .desc__list {
-  font-size: 2.2rem;
-  margin-bottom: 37px;
+  font-size: 2.4rem;
+  margin-bottom: 40px;
 }
 .desc__list li {
   position: relative;
-  padding-left: 27px;
+  padding-left: 30px;
   margin-bottom: 3px;
 }
 .desc__list li::before {
   content: "";
   position: absolute;
-  top: 17px;
+  top: 19px;
   left: 0px;
-  width: 20px;
+  width: 23px;
   height: 2px;
   background-color: #6b6b6b;
 }
 .content-icons {
-  margin-right: 165px;
+  position: relative;
+  margin-right: 66px;
 }
 .title__on-call {
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
 .title__skills {
-  margin-bottom: 22px;
-}
-.skills__icons {
-  margin-bottom: 22px;
+  margin-bottom: 26px;
 }
 .skills__icons a {
   color: #000000;
-  font-size: 4.6rem;
+  font-size: 5rem;
 }
 .skills__icons a:first-child {
   margin-left: 3px;
@@ -556,8 +562,8 @@ header {
   border-radius: 50%;
   background-color: black;
   font-size: 3rem;
-  width: 45px;
-  height: 45px;
+  width: 49px;
+  height: 49px;
 }
 .skills__icons a.icon-vk:before {
   display: flex;
@@ -569,10 +575,10 @@ header {
   background-color: #4680c2;
 }
 .skills__icons a.btn-custom__content {
-  padding: 0px 35px;
+  padding: 0px 37px;
 }
 .skills__icons a + a {
-  margin-left: 25px;
+  margin-left: 28px;
 }
 .icon-telegram:hover {
   color: #2ca5e0;
@@ -588,28 +594,29 @@ header {
 }
 .portfolio {
   background-color: #f4f8f9;
-  padding-top: 87px;
+  padding-top: 95px;
   padding-bottom: 115px;
 }
-.portfolio__title-m {
-  margin-bottom: 43px;
+.portfolio__title-b {
+  margin-bottom: 48px;
 }
 .portfolio__title-s {
-  font-size: 2.93rem;
+  font-size: 3.2rem;
   color: #000000;
 }
 .portfolio__title-ss {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
+  margin-bottom: 2px;
   color: #000000;
 }
 .projects-ul {
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 40px;
+  margin-bottom: 45px;
   user-select: none;
 }
 .projects-ul li + li {
-  margin-left: 72px;
+  margin-left: 80px;
 }
 .name-active {
   color: #000000;
@@ -625,20 +632,21 @@ header {
   justify-content: flex-start;
 }
 .list-row:first-child {
-  margin-bottom: 56px;
+  margin-bottom: 62px;
 }
 .list-item {
   position: relative;
   width: auto;
 }
 .list-item + .list-item {
-  margin-left: 26px;
+  margin-left: 30px;
 }
 .content__btn-custom {
   padding: 0px 36px;
 }
 .item-img {
-  margin-bottom: 15px;
+  position: relative;
+  margin-bottom: 18px;
   overflow: hidden;
 }
 .item-img img {
@@ -666,20 +674,76 @@ header {
 .item-img:hover::before {
   opacity: 0.5;
 }
-.img__first-row {
-  position: relative;
-  max-width: 508px;
-}
-.img__second-row {
-  position: relative;
-  max-width: 328px;
-}
 .portfolio__p-s p {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 300;
 }
 .portfolio__p-ss p {
-  font-size: 1.82rem;
+  font-size: 2rem;
   font-weight: 300;
+}
+.how-work {
+  padding-top: 117px;
+  padding-bottom: 130px;
+}
+.how-work__content {
+  max-width: 1005px;
+  margin: 0 auto;
+  text-align: center;
+}
+.how-work__title-b {
+  margin: 0 auto;
+  font-size: 6.4rem;
+}
+.content-work {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.content-work:nth-child(even) {
+  align-items: flex-start;
+}
+.work__item {
+  display: flex;
+}
+.work__item:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+.work-icon {
+  position: relative;
+  width: 69px;
+  height: 69px;
+  border-radius: 28px;
+  box-shadow: 0px 3px 35px 0px rgba(0, 112, 187, 0.35);
+}
+.work-icon .cls-1 {
+  width: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.work-icon #layers {
+  fill: #ffcf8f;
+}
+.work-icon #presentation-chart {
+  fill: #ff5b5b;
+}
+.work-icon #hours-24 {
+  fill: #ac74ee;
+}
+.work-icon #code-alt {
+  fill: #51e5cb;
+}
+.work-icon #diamond {
+  fill: #7cc0ff;
+}
+.work-desc p {
+  font-size: 1.65rem;
+  font-weight: 500;
+}
+.work-desc span {
+  font-size: 1.65rem;
+  font-weight: 700;
 }
 /*# sourceMappingURL=main.css.map */
