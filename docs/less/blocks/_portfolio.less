@@ -1,0 +1,107 @@
+.portfolio {
+    background-color: @bg-second;
+    padding-top: 87px;
+    padding-bottom: 115px;
+}
+
+.portfolio__title-m {
+    margin-bottom: 43px;
+}
+
+.portfolio__title-s {
+    font-size: 2.93rem;
+    color: @black;
+}
+
+.portfolio__title-ss {
+    font-size: 2.4rem;
+    color: @black;
+}
+
+.projects-ul {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+    user-select: none;
+    li + li {
+        margin-left: 72px;
+    }
+}
+
+.name-active {
+    color: @black;
+    font-weight: 900;
+}
+
+.projects-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-row {
+    display: flex;
+    justify-content: flex-start;
+    &:first-child {
+        margin-bottom: 56px;
+    }
+}
+
+.list-item {
+    position: relative;
+    width: auto;
+
+    & + & {
+        margin-left: 26px;
+    }
+}
+
+.content__btn-custom {
+    padding: 0px 36px;
+}
+.item-img {
+    margin-bottom: 15px;
+
+    &::before {
+        display: block;
+        position: absolute;
+        content: "";
+        width: inherit;
+        height: inherit;
+        background-color: @yellow;
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+    }
+    &:hover {
+        .item-img__btn {
+            opacity: 1;
+        }
+        &::before {
+            opacity: 0.5;
+        }
+    }
+}
+
+.img__first-row {
+    position: relative;
+    width: 508px;
+    height: 338px;
+}
+.img__second-row {
+    position: relative;
+    width: 328px;
+    height: 218px;
+}
+
+.portfolio__p-s {
+    p {
+        font-size: 2rem;
+        font-weight: 300;
+    }
+}
+.portfolio__p-ss {
+    p {
+        font-size: 1.82rem;
+        font-weight: 300;
+    }
+}
