@@ -6,6 +6,11 @@ header {
     background: center repeat-y url(@bglines);
 }
 
+.scroll-link-fix {
+    padding: 100px;
+    margin-top: -100px;
+}
+
 .nav-bar-fixed {
     padding: 0px 15px;
     min-height: 70px;
@@ -160,17 +165,7 @@ header {
     margin-bottom: 40px;
     li {
         position: relative;
-        padding-left: 30px;
         margin-bottom: 3px;
-        &::before {
-            content: "";
-            position: absolute;
-            top: 19px;
-            left: 0px;
-            width: 23px;
-            height: 2px;
-            background-color: #6b6b6b;
-        }
     }
 }
 .content-icons {
