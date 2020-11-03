@@ -648,8 +648,10 @@ header {
   display: block;
   position: absolute;
   content: "";
-  width: inherit;
-  height: inherit;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #fbdc4d;
   transition: all 0.5s ease-in-out;
   opacity: 0;
@@ -666,13 +668,11 @@ header {
 }
 .img__first-row {
   position: relative;
-  width: 508px;
-  height: 338px;
+  max-width: 508px;
 }
 .img__second-row {
   position: relative;
-  width: 328px;
-  height: 218px;
+  max-width: 328px;
 }
 .portfolio__p-s p {
   font-size: 2rem;
