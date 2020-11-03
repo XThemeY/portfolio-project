@@ -638,6 +638,10 @@ header {
 }
 .item-img {
   margin-bottom: 15px;
+  overflow: hidden;
+}
+.item-img img {
+  transition: 1s ease-in-out;
 }
 .item-img::before {
   display: block;
@@ -648,6 +652,10 @@ header {
   background-color: #fbdc4d;
   transition: all 0.5s ease-in-out;
   opacity: 0;
+  z-index: 5;
+}
+.item-img:hover img {
+  transform: scale(1.1);
 }
 .item-img:hover .item-img__btn {
   opacity: 1;
