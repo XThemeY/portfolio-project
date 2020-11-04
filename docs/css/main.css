@@ -661,7 +661,7 @@ header {
 .timeline {
   padding-top: 50px;
   padding-bottom: 65px;
-  background: center repeat-y url("../img/header/bg/bg-lines.jpg");
+  background: center repeat-y url("../img/timeline/bg-timeline.jpg");
 }
 @media (min-width: 768px) {
   .timeline {
