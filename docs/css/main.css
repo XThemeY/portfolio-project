@@ -667,7 +667,12 @@ header {
   .title-vs__timeline {
     font-size: 2.4rem;
     margin-bottom: 5px;
+  }
+  .title-vs__timeline:nth-child(odd) {
     margin-left: auto;
+  }
+  .title-vs__timeline:nth-child(even) {
+    margin-right: auto;
   }
 }
 @media (min-width: 1200px) {
@@ -717,9 +722,9 @@ header {
     left: 0;
   }
   .timeline__item:nth-child(odd) {
-    text-align: right;
     padding-left: 0;
     padding-right: 69px;
+    text-align: right;
   }
   .timeline__item:nth-child(odd) .timeline-icon {
     left: auto;

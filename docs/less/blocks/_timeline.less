@@ -35,7 +35,13 @@
     @media (min-width: 768px) {
         font-size: 2.4rem;
         margin-bottom: 5px;
-        margin-left: auto;
+        &:nth-child(odd) {
+            margin-left: auto;
+        }
+
+        &:nth-child(even) {
+            margin-right: auto;
+        }
     }
     @media (min-width: 992px) {
     }
@@ -90,9 +96,9 @@
         }
 
         &:nth-child(odd) {
-            text-align: right;
             padding-left: 0;
             padding-right: 69px;
+            text-align: right;
             .timeline-icon {
                 left: auto;
                 right: -37px;
