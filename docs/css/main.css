@@ -75,7 +75,7 @@ p {
   padding: 0;
 }
 .title-vs {
-  font-size: 2.33rem;
+  font-size: 2rem;
   font-weight: 800;
 }
 .title-s {
@@ -129,8 +129,8 @@ button {
 }
 .container {
   position: relative;
+  max-width: 320px;
   z-index: 10;
-  max-width: 1140px;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -141,6 +141,7 @@ button {
 }
 @media (min-width: 1200px) {
   .container {
+    max-width: 1140px;
     padding: 0;
   }
 }
@@ -683,36 +684,77 @@ header {
   font-weight: 300;
 }
 .timeline {
-  padding-top: 117px;
+  padding-top: 50px;
   padding-bottom: 130px;
 }
-.timeline__content {
-  max-width: 1005px;
+.title-vs__timeline {
+  margin-bottom: 10px;
+  line-height: 24px;
+}
+.timeline-content {
+  width: 1005px;
   margin: 0 auto;
   text-align: center;
 }
 .timeline__title-b {
   margin: 0 auto;
-  font-size: 6.4rem;
+  font-size: 3.85rem;
+  margin-bottom: 42px;
+}
+@media (min-width: 1200px) {
+  .timeline__title-b {
+    font-size: 6.4rem;
+  }
 }
 .content-timeline {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
 }
-.content-timeline:nth-child(even) {
-  align-items: flex-start;
+@media (min-width: 1200px) {
+  .content-timeline:nth-child(even) {
+    align-items: flex-start;
+  }
 }
 .timeline__item {
+  position: relative;
   display: flex;
+  margin-bottom: 64px;
+  min-height: 160px;
 }
-.timeline__item:nth-child(odd) {
-  flex-direction: row-reverse;
+.timeline__item:first-child::after {
+  content: "";
+  position: absolute;
+  top: 95px;
+  left: 32px;
+  width: 5px;
+  height: 70px;
+  background-color: #e1eef4;
+}
+.timeline__item::after {
+  content: "";
+  position: absolute;
+  top: 96px;
+  left: 32px;
+  width: 5px;
+  height: 135px;
+  background-color: #e1eef4;
+}
+@media (min-width: 768px) {
+  .timeline__item {
+    min-width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .timeline__item:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
 }
 .timeline-icon {
-  position: relative;
-  width: 69px;
-  height: 69px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 74px;
+  height: 74px;
   border-radius: 28px;
   box-shadow: 0px 3px 35px 0px rgba(0, 112, 187, 0.35);
 }
@@ -738,12 +780,16 @@ header {
 .timeline-icon #diamond {
   fill: #7cc0ff;
 }
+.timeline-desc {
+  padding-left: 98px;
+  padding-right: 10px;
+  font-size: 1.4rem;
+}
 .timeline-desc p {
-  font-size: 1.65rem;
   font-weight: 500;
+  margin-bottom: 4px;
 }
 .timeline-desc span {
-  font-size: 1.65rem;
   font-weight: 700;
 }
 /*# sourceMappingURL=main.css.map */

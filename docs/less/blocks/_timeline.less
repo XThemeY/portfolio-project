@@ -1,33 +1,6 @@
 .timeline {
-    padding-top: 117px;
+    padding-top: 50px;
     padding-bottom: 130px;
-}
-.timeline__content {
-    max-width: 1005px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.timeline__title-b {
-    margin: 0 auto;
-    font-size: 6.4rem;
-}
-
-.content-timeline {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
-    &:nth-child(even) {
-        align-items: flex-start;
-    }
-}
-.timeline__item {
-    display: flex;
-
-    &:nth-child(odd) {
-        flex-direction: row-reverse;
-    }
 
     @media (min-width: 576px) {
     }
@@ -40,10 +13,95 @@
     }
 }
 
-.timeline-icon {
+.title-vs__timeline {
+    margin-bottom: 10px;
+    line-height: 24px;
+}
+.timeline-content {
+    width: 1005px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.timeline__title-b {
+    margin: 0 auto;
+    font-size: 3.85rem;
+    margin-bottom: 42px;
+    @media (min-width: 576px) {
+    }
+
+    @media (min-width: 768px) {
+    }
+    @media (min-width: 992px) {
+    }
+    @media (min-width: 1200px) {
+        font-size: 6.4rem;
+    }
+}
+
+.content-timeline {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 576px) {
+    }
+
+    @media (min-width: 768px) {
+    }
+    @media (min-width: 992px) {
+    }
+    @media (min-width: 1200px) {
+        &:nth-child(even) {
+            align-items: flex-start;
+        }
+    }
+}
+.timeline__item {
     position: relative;
-    width: 69px;
-    height: 69px;
+    display: flex;
+    margin-bottom: 64px;
+    min-height: 160px;
+
+    &:first-child::after {
+        content: "";
+        position: absolute;
+        top: 95px;
+        left: 32px;
+        width: 5px;
+        height: 70px;
+        background-color: #e1eef4;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 96px;
+        left: 32px;
+        width: 5px;
+        height: 135px;
+        background-color: #e1eef4;
+    }
+
+    @media (min-width: 576px) {
+    }
+
+    @media (min-width: 768px) {
+        min-width: 50%;
+    }
+    @media (min-width: 992px) {
+    }
+    @media (min-width: 1200px) {
+        &:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+.timeline-icon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 74px;
+    height: 74px;
     border-radius: 28px;
     box-shadow: 0px 3px 35px 0px rgba(0, 112, 187, 0.35);
 
@@ -73,13 +131,16 @@
 }
 
 .timeline-desc {
+    padding-left: 98px;
+    padding-right: 10px;
+    font-size: 1.4rem;
+
     p {
-        font-size: 1.65rem;
         font-weight: 500;
+        margin-bottom: 4px;
     }
 
     span {
-        font-size: 1.65rem;
         font-weight: 700;
     }
 }
