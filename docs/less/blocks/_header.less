@@ -6,11 +6,6 @@ header {
     background: center repeat-y url(@bglines);
 }
 
-.scroll-link-fix {
-    padding: 100px;
-    margin-top: -100px;
-}
-
 .nav-bar-fixed {
     padding: 0px 15px;
     min-height: 70px;
@@ -165,12 +160,16 @@ header {
     margin-bottom: 40px;
     li {
         position: relative;
-        margin-bottom: 3px;
         padding-left: 30px;
+        margin-bottom: 3px;
         &::before {
-            content: "\2014";
+            content: "";
             position: absolute;
-            left: 0;
+            top: 19px;
+            left: 0px;
+            width: 23px;
+            height: 2px;
+            background-color: #6b6b6b;
         }
     }
 }
@@ -199,7 +198,7 @@ header {
             vertical-align: bottom;
             border-radius: 50%;
             background-color: black;
-            font-size: 2.7rem;
+            font-size: 3rem;
             width: 49px;
             height: 49px;
 

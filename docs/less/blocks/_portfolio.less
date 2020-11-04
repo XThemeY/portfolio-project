@@ -38,19 +38,24 @@
 .projects-list {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+}
+
+.list-row {
+    display: flex;
+    justify-content: flex-start;
+    &:first-child {
+        margin-bottom: 62px;
+    }
 }
 
 .list-item {
-    width: 32%;
-    max-width: 360px;
-}
+    position: relative;
+    width: auto;
 
-.list-item-big {
-    width: 50%;
-    max-width: 555px;
-    margin-bottom: 62px;
+    & + & {
+        margin-left: 30px;
+    }
 }
 
 .content__btn-custom {
