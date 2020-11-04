@@ -319,28 +319,6 @@ button {
 .projects-ul li.project-active a {
   color: #000000;
 }
-.work-item {
-  width: fit-content;
-  font-size: 2.6rem;
-  font-weight: 800;
-  user-select: none;
-}
-.work-item p {
-  font-size: 1.8rem;
-  font-weight: 500;
-}
-.work-item h3.underline::before {
-  left: 0;
-  right: 0;
-  bottom: 4px;
-}
-.work-item span {
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-.work-item:hover h3.underline::before {
-  background-color: #ea736d;
-}
 .form-item {
   position: relative;
   width: fit-content;
@@ -402,10 +380,6 @@ header {
   padding-top: 60px;
   padding-bottom: 240px;
   background: center repeat-y url("../img/header/bg/bg-lines.jpg");
-}
-.scroll-link-fix {
-  padding: 100px;
-  margin-top: -100px;
 }
 .nav-bar-fixed {
   padding: 0px 15px;
@@ -533,13 +507,17 @@ header {
 }
 .desc__list li {
   position: relative;
-  margin-bottom: 3px;
   padding-left: 30px;
+  margin-bottom: 3px;
 }
 .desc__list li::before {
-  content: "\2014";
+  content: "";
   position: absolute;
-  left: 0;
+  top: 19px;
+  left: 0px;
+  width: 23px;
+  height: 2px;
+  background-color: #6b6b6b;
 }
 .content-icons {
   position: relative;
@@ -563,7 +541,7 @@ header {
   vertical-align: bottom;
   border-radius: 50%;
   background-color: black;
-  font-size: 2.7rem;
+  font-size: 3rem;
   width: 49px;
   height: 49px;
 }
@@ -681,13 +659,6 @@ header {
   font-weight: 300;
 }
 .timeline {
-<<<<<<< HEAD
-  padding-top: 117px;
-  padding-bottom: 130px;
-}
-.timeline__content {
-  max-width: 1005px;
-=======
   padding-top: 50px;
   padding-bottom: 65px;
 }
@@ -704,7 +675,6 @@ header {
   }
 }
 .timeline__title-b {
->>>>>>> timeline
   margin: 0 auto;
   font-size: 3.85rem;
   margin-bottom: 42px;
@@ -715,31 +685,6 @@ header {
     margin-bottom: 150px;
   }
 }
-<<<<<<< HEAD
-.timeline__title-b {
-  margin: 0 auto;
-  margin-bottom: 150px;
-  font-size: 6.4rem;
-}
-.content-timeline {
-  display: flex;
-  flex-direction: column;
-}
-.content-timeline :nth-child(odd) {
-  align-self: flex-start;
-}
-.content-timeline :nth-child(even) {
-  align-self: flex-end;
-}
-.timeline__item {
-  display: flex;
-}
-.timeline__item:nth-child(odd) {
-  flex-direction: row-reverse;
-}
-.timeline-icon {
-  position: relative;
-=======
 @media (min-width: 1200px) {
   .timeline__title-b {
     font-size: 6.4rem;
@@ -772,6 +717,7 @@ header {
   margin-bottom: 20px;
   padding-bottom: 45px;
   padding-left: 99px;
+  user-select: none;
 }
 .timeline__item::after {
   content: "";
@@ -832,12 +778,20 @@ header {
     padding-left: 50px;
     padding-right: 75px;
   }
+  .timeline__item:hover .underline::before {
+    background-color: #ea736d;
+  }
+  .timeline__item .underline::before {
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: #fbdc4d;
+  }
 }
 .timeline-icon {
   position: absolute;
   top: 0px;
   left: 0px;
->>>>>>> timeline
   width: 74px;
   height: 74px;
   border-radius: 28px;
@@ -865,17 +819,12 @@ header {
 .timeline-icon #diamond {
   fill: #7cc0ff;
 }
-<<<<<<< HEAD
-.timeline-desc p {
-  font-size: 1.65rem;
-=======
 .timeline-desc {
   width: 100%;
   padding-right: 10px;
   font-size: 1.4rem;
 }
 .timeline-desc p {
->>>>>>> timeline
   font-weight: 500;
   margin-bottom: 4px;
 }
@@ -884,10 +833,6 @@ header {
     font-size: 1.6rem;
   }
 }
-<<<<<<< HEAD
-.timeline-desc span {
-  font-size: 1.65rem;
-=======
 @media (min-width: 1200px) {
   .timeline-desc p {
     font-size: 1.8rem;
@@ -895,7 +840,6 @@ header {
   }
 }
 .timeline-desc span {
->>>>>>> timeline
   font-weight: 700;
 }
 @media (min-width: 768px) {

@@ -55,6 +55,7 @@
     margin-bottom: 20px;
     padding-bottom: 45px;
     padding-left: 99px;
+    user-select: none;
     &::after {
         content: "";
         position: absolute;
@@ -120,6 +121,21 @@
         &:nth-child(odd) {
             padding-left: 50px;
             padding-right: 75px;
+        }
+        &:hover {
+            .underline {
+                &::before {
+                    background-color: @underlineHover;
+                }
+            }
+        }
+        .underline {
+            &::before {
+                left: 0;
+                right: 0;
+                height: 5px;
+                background-color: #fbdc4d;
+            }
         }
     }
 }
