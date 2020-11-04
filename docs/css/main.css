@@ -667,6 +667,7 @@ header {
   .title-vs__timeline {
     font-size: 2.4rem;
     margin-bottom: 5px;
+    margin-left: auto;
   }
 }
 @media (min-width: 1200px) {
