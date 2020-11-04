@@ -1,15 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-	var formItem = document.querySelectorAll('.form-item input');
-
-
-
+	var formItem = document.querySelectorAll('.form-item input, textarea');
 
 	formItem.forEach(function (item) {
 		const placeHolderItem = item.nextElementSibling;
 
 		item.addEventListener('focus', function () {
-
 			placeHolderItem.classList.add("form__item-active")
 		})
 
@@ -18,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
 				placeHolderItem.classList.remove("form__item-active")
 			}
 		})
+
 	})
+
 
 })

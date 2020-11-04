@@ -1,0 +1,155 @@
+.contacts {
+    background: center repeat-y url(@bglines);
+    background-color: #f4f8f9;
+
+    @media (min-width: 768px) {
+    }
+
+    @media (min-width: 1200px) {
+        padding-top: 140px;
+        padding-bottom: 150px;
+    }
+}
+.contacts__title-b {
+    margin: 0 auto;
+    margin-bottom: 55px;
+}
+.contacts-content {
+    display: flex;
+}
+
+.contacts__item {
+    width: 50%;
+}
+
+.info-item {
+    margin-bottom: 45px;
+
+    &:first-child {
+        margin-top: 20px;
+    }
+
+    p {
+        font-size: 2rem;
+        line-height: 1.6;
+    }
+}
+
+.info-flex {
+    display: flex;
+
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+
+    span {
+        &:first-child {
+            width: 37%;
+        }
+        display: inline-block;
+    }
+
+    span + span {
+        font-weight: 500;
+    }
+    a {
+        font-weight: 500;
+        color: @blue;
+        font-size: 2rem;
+        &:hover {
+            color: @linkHover;
+        }
+    }
+}
+
+.contacts__form {
+    display: flex;
+    flex-direction: column;
+    margin-right: 23px;
+    margin-left: 75px;
+    padding-left: 81px;
+    padding-top: 73px;
+    padding-bottom: 0px;
+    padding-right: 90px;
+    background-color: #ffffff;
+    box-shadow: 0px 28px 100px 0px #c2dbeb;
+}
+
+.form-item {
+    position: relative;
+    width: 100%;
+
+    font-size: 2rem;
+    font-weight: 700;
+
+    & + & {
+        margin-top: 55px;
+    }
+    & + & {
+        &:last-of-type {
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+    }
+
+    &:nth-child(3) {
+        span {
+            top: 0px;
+        }
+    }
+
+    input[type="text"] {
+        border: none;
+        padding: 0 6px;
+        color: @black;
+        width: inherit;
+        height: 50px;
+        font-family: @fr;
+        font-size: 2rem;
+        font-weight: 700;
+        border-bottom: 2px solid #bcbcbc;
+
+        &:active,
+        &:focus {
+            border-bottom-color: @underlineHover;
+        }
+    }
+    span {
+        position: absolute;
+        pointer-events: none;
+        left: 0px;
+        top: 10px;
+        color: #bcbcbc;
+        transition: 0.5s ease-in-out;
+
+        &.form__item-active {
+            left: 0px;
+            top: -14px;
+            font-size: 1.6rem;
+            color: #ed9626;
+        }
+    }
+
+    textarea {
+        width: inherit;
+        height: 120px;
+        border: none;
+        resize: none;
+        font-family: @fr;
+        font-size: 2rem;
+        font-weight: 700;
+        border-bottom: 2px solid #bcbcbc;
+        &:active,
+        &:focus {
+            border-bottom-color: @underlineHover;
+        }
+    }
+}
+
+.btn-form {
+    height: 66px;
+    padding: 0px 35px;
+    @media (min-width: 1200px) {
+        line-height: 62px;
+    }
+}
