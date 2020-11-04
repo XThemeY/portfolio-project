@@ -136,6 +136,7 @@ button {
 }
 @media (min-width: 768px) {
   .container {
+    max-width: 708px;
     padding: 0 30px;
   }
 }
@@ -687,15 +688,6 @@ header {
   padding-top: 50px;
   padding-bottom: 130px;
 }
-.title-vs__timeline {
-  margin-bottom: 10px;
-  line-height: 24px;
-}
-.timeline-content {
-  width: 1005px;
-  margin: 0 auto;
-  text-align: center;
-}
 .timeline__title-b {
   margin: 0 auto;
   font-size: 3.85rem;
@@ -706,47 +698,60 @@ header {
     font-size: 6.4rem;
   }
 }
-.content-timeline {
-  display: flex;
-  flex-direction: column;
+.title-vs__timeline {
+  margin-bottom: 10px;
+  line-height: 1.15;
 }
-@media (min-width: 1200px) {
-  .content-timeline:nth-child(even) {
-    align-items: flex-start;
-  }
+.timeline-content {
+  max-width: 1005px;
+  margin: 0 auto;
 }
 .timeline__item {
-  position: relative;
   display: flex;
-  margin-bottom: 64px;
-  min-height: 160px;
-}
-.timeline__item:first-child::after {
-  content: "";
-  position: absolute;
-  top: 95px;
-  left: 32px;
-  width: 5px;
-  height: 70px;
-  background-color: #e1eef4;
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 45px;
+  padding-left: 99px;
 }
 .timeline__item::after {
   content: "";
   position: absolute;
-  top: 96px;
-  left: 32px;
-  width: 5px;
-  height: 135px;
+  top: 95px;
+  left: 37px;
+  width: 3px;
+  bottom: 0px;
   background-color: #e1eef4;
+}
+.timeline__item:last-child::after {
+  display: none;
 }
 @media (min-width: 768px) {
   .timeline__item {
-    min-width: 50%;
+    width: 50%;
   }
-}
-@media (min-width: 1200px) {
+  .timeline__item:nth-child(even) {
+    margin-left: auto;
+    padding-left: 69px;
+  }
+  .timeline__item:nth-child(even) .timeline-icon {
+    left: -37px;
+    right: 0;
+  }
+  .timeline__item:nth-child(even)::after {
+    left: 0;
+  }
   .timeline__item:nth-child(odd) {
-    flex-direction: row-reverse;
+    text-align: right;
+    padding-left: 0;
+    padding-right: 69px;
+  }
+  .timeline__item:nth-child(odd) .timeline-icon {
+    left: auto;
+    right: -37px;
+  }
+  .timeline__item:nth-child(odd)::after {
+    left: auto;
+    right: 0;
   }
 }
 .timeline-icon {
@@ -781,7 +786,7 @@ header {
   fill: #7cc0ff;
 }
 .timeline-desc {
-  padding-left: 98px;
+  width: 100%;
   padding-right: 10px;
   font-size: 1.4rem;
 }
@@ -791,5 +796,10 @@ header {
 }
 .timeline-desc span {
   font-weight: 700;
+}
+@media (min-width: 768px) {
+  .timeline-desc {
+    padding-right: 0;
+  }
 }
 /*# sourceMappingURL=main.css.map */
