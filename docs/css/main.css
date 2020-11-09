@@ -178,7 +178,7 @@ button {
   line-height: 58px;
   border-radius: 30.5px;
   text-align: center;
-  transition: 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, border 0.5s ease-in-out;
   color: #000000;
   font-size: 2.2rem;
   font-weight: 700;
@@ -464,6 +464,9 @@ header {
 }
 .content__btn .btn:not(:last-child) {
   margin-right: 15px;
+}
+.content__btn a:hover {
+  color: #000000;
 }
 .header__bg-img {
   margin-top: -130px;
