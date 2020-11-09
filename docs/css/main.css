@@ -668,12 +668,6 @@ header {
     font-size: 2.4rem;
     margin-bottom: 5px;
   }
-  .title-vs__timeline:nth-child(odd) {
-    margin-left: auto;
-  }
-  .title-vs__timeline:nth-child(even) {
-    margin-right: auto;
-  }
 }
 @media (min-width: 1200px) {
   .title-vs__timeline {
@@ -829,7 +823,6 @@ header {
 }
 .contacts {
   background: center repeat-y url("../img/header/bg/bg-lines.jpg");
-  background-color: #f4f8f9;
 }
 @media (min-width: 1200px) {
   .contacts {
@@ -843,31 +836,46 @@ header {
 }
 .contacts-content {
   display: flex;
+  justify-content: space-between;
+  padding-right: 23px;
+  position: relative;
+}
+.contacts-content:before {
+  content: "";
+  position: absolute;
+  width: 448px;
+  height: 280px;
+  top: 0px;
+  left: -352px;
+  background: center no-repeat url("../img/bg_dots.png");
 }
 .contacts__item {
-  width: 50%;
+  width: 45%;
+  padding-top: 20px;
 }
 .info-item {
   margin-bottom: 45px;
 }
-.info-item:first-child {
-  margin-top: 20px;
+.info-item:last-child {
+  margin-bottom: 0px;
 }
 .info-item p {
   font-size: 2rem;
   line-height: 1.6;
 }
 .info-flex {
-  display: flex;
   margin-bottom: 20px;
   font-size: 2rem;
   font-weight: 700;
+}
+.info-flex:last-child {
+  margin-bottom: 0px;
 }
 .info-flex span {
   display: inline-block;
 }
 .info-flex span:first-child {
-  width: 37%;
+  width: 195px;
 }
 .info-flex span + span {
   font-weight: 500;
@@ -880,17 +888,18 @@ header {
 .info-flex a:hover {
   color: #ed574f;
 }
+.form-wrapper {
+  width: 45.5%;
+  padding-left: 55px;
+  padding-right: 60px;
+  padding-top: 73px;
+  padding-bottom: 40px;
+  box-shadow: 0px 28px 100px 0px #c2dbeb;
+  background-color: #ffffff;
+}
 .contacts__form {
   display: flex;
   flex-direction: column;
-  margin-right: 23px;
-  margin-left: 75px;
-  padding-left: 81px;
-  padding-top: 73px;
-  padding-bottom: 0px;
-  padding-right: 90px;
-  background-color: #ffffff;
-  box-shadow: 0px 28px 100px 0px #c2dbeb;
 }
 .form-item {
   position: relative;
@@ -903,7 +912,6 @@ header {
 }
 .form-item + .form-item:last-of-type {
   margin-top: 30px;
-  margin-bottom: 40px;
 }
 .form-item:nth-child(3) span {
   top: 0px;
@@ -972,6 +980,22 @@ header {
 }
 .footer a {
   font-size: 1.6rem;
+  color: #b0b0b0;
+}
+.footer a.underline::before {
+  height: 1px;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  background-color: #b0b0b0;
+}
+.footer a:hover,
+.footer a:active {
+  color: #ffffff;
+}
+.footer a:hover.underline::before,
+.footer a:active.underline::before {
+  background-color: white;
 }
 .footer-title {
   margin-bottom: 10px;
