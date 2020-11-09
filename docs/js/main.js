@@ -1,21 +1,27 @@
-document.addEventListener("DOMContentLoaded", function () {
+$(document).ready(function () {
 
-	var formItem = document.querySelectorAll('.form-item input, textarea');
-
+	// Анимация span полей формы.
+	const formItem = document.querySelectorAll('.form-item input, textarea');
 	formItem.forEach(function (item) {
-		const placeHolderItem = item.nextElementSibling;
 
 		item.addEventListener('focus', function () {
-			placeHolderItem.classList.add("form__item-active")
+			this.nextElementSibling.classList.add("form__item-active")
 		})
 
 		item.addEventListener('blur', function () {
 			if (item.value === "") {
-				placeHolderItem.classList.remove("form__item-active")
+				this.nextElementSibling.classList.remove("form__item-active")
 			}
 		})
 
 	})
 
+	//Menu-burger
+	const menuBurger = document.querySelector('.toggle-menu');
+	const sideMenu = document.querySelector('.side-menu');
 
+	menuBurger.addEventListener('click', function () {
+		this.classList.toggle('active');
+		sideMenu.classList.toggle('active');
+	})
 })

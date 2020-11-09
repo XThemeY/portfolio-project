@@ -50,7 +50,7 @@ body {
 a {
     display: inline-block;
     text-decoration: none;
-    white-space: nowrap;
+
     color: @link;
     font-size: 1.8rem;
     transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
@@ -61,7 +61,7 @@ a {
         color: @linkActive;
     }
 
-    .underline {
+    &.underline {
         &::before {
             height: 2px;
             left: 0px;
@@ -75,6 +75,11 @@ a {
         &:active::before {
             background-color: @linkActive;
         }
+    }
+    @media (min-width: 768px) {
+    }
+    @media (min-width: 1200px) {
+        white-space: nowrap;
     }
 }
 
@@ -129,19 +134,40 @@ p {
 }
 
 .title-m {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
+    @media (min-width: 768px) {
+        font-size: 3.2rem;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: 4rem;
+    }
 }
 
 .title-b {
-    font-size: 6.4rem;
+    font-size: 4.2rem;
     font-weight: 800;
     &.underline {
         &::before {
             left: 0;
             right: 0;
-            bottom: 15px;
+            bottom: 10px;
         }
+    }
+
+    @media (min-width: 768px) {
+        font-size: 5.2rem;
+    }
+    @media (min-width: 992px) {
+    }
+    @media (min-width: 1200px) {
+        &.underline {
+            &::before {
+                bottom: 15px;
+            }
+        }
+        font-size: 6.4rem;
     }
 }
 
@@ -175,13 +201,12 @@ button {
 
     @media (min-width: 768px) {
         max-width: 708px;
-        padding: 0 30px;
+        padding: 0;
     }
     @media (min-width: 992px) {
     }
     @media (min-width: 1200px) {
         max-width: 1140px;
-        padding: 0;
     }
 }
 
@@ -338,11 +363,9 @@ button {
 }
 
 .email {
-    position: absolute;
-    top: 171px;
     a {
         color: @black;
-        font-size: 2.1rem;
+        font-size: 1.8rem;
         &:hover {
             color: @blue;
         }
@@ -365,24 +388,16 @@ button {
             background-color: @red;
         }
     }
-}
 
-.projects-ul {
-    a {
-        font-size: 2.8rem;
-        font-weight: 800;
-        color: #8fa5ae;
-
-        &:hover {
-            color: @linkActive;
-        }
+    @media (min-width: 768px) {
     }
-
-    li {
-        &.project-active {
-            a {
-                color: @black;
-            }
+    @media (min-width: 992px) {
+    }
+    @media (min-width: 1200px) {
+        position: absolute;
+        top: 171px;
+        a {
+            font-size: 2.1rem;
         }
     }
 }

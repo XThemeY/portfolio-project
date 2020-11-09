@@ -1,32 +1,89 @@
 .portfolio {
     background-color: @bg-second;
-    padding-top: 95px;
-    padding-bottom: 115px;
+    padding-top: 50px;
+    padding-bottom: 95px;
+    @media (min-width: 768px) {
+        padding-top: 70px;
+        padding-bottom: 80px;
+    }
+    @media (min-width: 1200px) {
+        padding-top: 95px;
+        padding-bottom: 115px;
+    }
 }
 
 .portfolio__title-b {
-    margin-bottom: 48px;
+    margin-bottom: 40px;
+    @media (min-width: 768px) {
+        margin-bottom: 45px;
+    }
+    @media (min-width: 1200px) {
+        margin-bottom: 48px;
+    }
 }
 
 .portfolio__title-s {
-    font-size: 3.2rem;
+    font-size: 2.2rem;
     color: @black;
+    margin-bottom: 5px;
+    @media (min-width: 768px) {
+    }
+    @media (min-width: 1200px) {
+        margin-bottom: 0;
+        font-size: 3.2rem;
+    }
 }
 
 .portfolio__title-ss {
-    font-size: 2.6rem;
-    margin-bottom: 2px;
+    font-size: 2.2rem;
     color: @black;
+    margin-bottom: 5px;
+    @media (min-width: 768px) {
+    }
+    @media (min-width: 1200px) {
+        font-size: 2.6rem;
+        margin-bottom: 2px;
+    }
 }
 
 .projects-ul {
-    display: flex;
+    display: none;
     justify-content: flex-start;
     margin-bottom: 45px;
     user-select: none;
 
+    a {
+        font-size: 2.4rem;
+        font-weight: 800;
+        color: #8fa5ae;
+
+        &:hover {
+            color: @linkActive;
+        }
+    }
+
+    li {
+        &.project-active {
+            a {
+                color: @black;
+            }
+        }
+    }
+
     li + li {
-        margin-left: 80px;
+        margin-left: 45px;
+    }
+
+    @media (min-width: 768px) {
+        display: flex;
+    }
+    @media (min-width: 1200px) {
+        a {
+            font-size: 2.8rem;
+        }
+        li + li {
+            margin-left: 80px;
+        }
     }
 }
 
@@ -38,19 +95,50 @@
 .projects-list {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 40px;
+    @media (min-width: 768px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 0;
+    }
+    @media (min-width: 1200px) {
+    }
 }
 
 .list-item {
-    width: 32%;
+    width: 100%;
     max-width: 360px;
+    & + & {
+        margin-top: 40px;
+    }
+    @media (min-width: 768px) {
+        width: 48%;
+        & + & {
+            margin-top: 0;
+        }
+
+        &:not(:nth-child(2n)) {
+            margin-bottom: 40px;
+        }
+    }
+    @media (min-width: 1200px) {
+        width: 32%;
+    }
 }
 
 .list-item-big {
-    width: 50%;
+    width: 100%;
     max-width: 555px;
-    margin-bottom: 62px;
+
+    @media (min-width: 768px) {
+        width: 48%;
+    }
+    @media (min-width: 1200px) {
+        margin-bottom: 62px;
+        width: 50%;
+    }
 }
 
 .content__btn-custom {
@@ -63,42 +151,67 @@
     img {
         transition: 1s ease-in-out;
     }
-    &::before {
-        display: block;
-        position: absolute;
-        content: "";
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: @yellow;
-        transition: all 0.5s ease-in-out;
-        opacity: 0;
-        z-index: 5;
-    }
-    &:hover {
-        img {
-            transform: scale(1.1);
-        }
-        .item-img__btn {
-            opacity: 1;
-        }
 
+    @media (min-width: 1200px) {
         &::before {
-            opacity: 0.5;
+            display: block;
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: @yellow;
+            transition: all 0.5s ease-in-out;
+            opacity: 0;
+            z-index: 5;
+        }
+        &:hover {
+            img {
+                transform: scale(1.1);
+            }
+            .item-img__btn {
+                opacity: 1;
+            }
+
+            &::before {
+                opacity: 0.5;
+            }
         }
     }
 }
 
 .portfolio__p-s {
     p {
-        font-size: 2.2rem;
+        font-size: 1.6rem;
         font-weight: 300;
+    }
+
+    @media (min-width: 768px) {
+    }
+    @media (min-width: 1200px) {
+        p {
+            font-size: 2.2rem;
+        }
     }
 }
 .portfolio__p-ss {
     p {
-        font-size: 2rem;
+        font-size: 1.6rem;
         font-weight: 300;
+    }
+
+    @media (min-width: 768px) {
+    }
+    @media (min-width: 1200px) {
+        p {
+            font-size: 2rem;
+        }
+    }
+}
+
+.projects-all {
+    @media (min-width: 1200px) {
+        display: none;
     }
 }

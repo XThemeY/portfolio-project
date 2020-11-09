@@ -1,7 +1,6 @@
 .timeline {
     padding-top: 50px;
     padding-bottom: 65px;
-    background: center repeat-y url(@bgtimeline);
 
     @media (min-width: 768px) {
         padding-top: 80px;
@@ -11,6 +10,7 @@
     @media (min-width: 1200px) {
         padding-top: 140px;
         padding-bottom: 130px;
+        background: center repeat-y url(@bgtimeline);
     }
 }
 
@@ -36,6 +36,7 @@
     @media (min-width: 768px) {
         font-size: 2.4rem;
         margin-bottom: 5px;
+        margin-left: auto;
     }
     @media (min-width: 992px) {
     }
@@ -57,6 +58,11 @@
     padding-bottom: 45px;
     padding-left: 99px;
     user-select: none;
+    .underline {
+        &::before {
+            display: none;
+        }
+    }
     &::after {
         content: "";
         position: absolute;
@@ -87,12 +93,17 @@
             &::after {
                 left: 0;
             }
+
+            .title-vs__timeline {
+                margin-right: auto;
+            }
         }
 
         &:nth-child(odd) {
+            margin-right: auto;
+            text-align: right;
             padding-left: 0;
             padding-right: 69px;
-            text-align: right;
             .timeline-icon {
                 left: auto;
                 right: -37px;
@@ -101,6 +112,10 @@
             &::after {
                 left: auto;
                 right: 0;
+            }
+
+            .title-vs__timeline {
+                margin-left: auto;
             }
         }
     }
@@ -130,8 +145,10 @@
                 }
             }
         }
+
         .underline {
             &::before {
+                display: block;
                 left: 0;
                 right: 0;
                 height: 5px;
@@ -204,14 +221,7 @@
         }
     }
 
-    @media (min-width: 576px) {
-    }
-
     @media (min-width: 768px) {
         padding-right: 0;
-    }
-    @media (min-width: 992px) {
-    }
-    @media (min-width: 1200px) {
     }
 }

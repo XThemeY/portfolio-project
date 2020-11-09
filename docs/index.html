@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="./fonts/mplus1p/mplus1p.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/ce6848da15.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="./css/main.css?v=2.11">
+	<link rel="stylesheet" href="./css/main.css?v=3.1">
 	<title>Портфолио</title>
 </head>
 
@@ -15,9 +15,10 @@
 
 	<header class="header">
 
-		<nav class="nav-bar-fixed">
-			<div class="nav-bar__logo ">
-				<a class="underline" href="#!">АИ</a>
+		<nav class="nav-bar">
+
+			<div class="nav-bar__logo underline">
+				<a class="" href="#!">АИ</a>
 			</div>
 			<ul class="nav-bar__nav nav-underline">
 				<li><a href="#!">Главная</a></li>
@@ -29,65 +30,88 @@
 				<a href="#!" class="fab fa-github icon-github"></a>
 				<a href="#!" class="fab fa-vk icon-vk"></a>
 			</div>
+
+			<div class="side-menu">
+				<div class="nav-bar__logo side-menu__logo">
+					<a class="underline" href="#!">АИ</a>
+				</div>
+				<ul class="side-menu__nav ">
+					<li class="underline"><a href="#!">Главная</a></li>
+					<li class="underline"><a href="#!">Работы</a></li>
+				</ul>
+				<div class="skills__icons side-menu__icons">
+					<h3 class="title-m side-menu__title">Контакты:</h3>
+					<a href="#!" class="fab fa-github icon-github"></a>
+					<a href="#!" class="fab fa-telegram icon-telegram"></a>
+					<a href="#!" class="fab fa-vk icon-vk"></a>
+					<a href="#!" class="fab fa-facebook icon-facebook"></a>
+				</div>
+			</div>
+			<div class="toggle-menu"">
+				<span></span>
+			</div>
+
 		</nav>
 
-		<div class="container">
+		<div class=" container">
 
-			<div class="main-content">
-				<div class="content-text">
-					<h1 class="content__logo"><span class="underline">Артем</span><span
-							class="underline logo-surname">Иванников</span></h1>
-					<div class="content__desc">
-						<p>Верстальщик сайтов, веб-разработчик. Оперативная верстка. Работаю с<br>соблюдением сроков и
-							выполнением ТЗ. </p>
-					</div>
-					<div class="content__btn">
-						<a class="btn" href="#myskills">Познакомиться</a>
-						<a class="btn btn-outline" href="#!">Контакты</a>
-					</div>
-				</div>
-
-				<div class=" content-pic">
-					<div class="image"><img src="./img/header/header-img.jpg" alt=""></div>
-				</div>
-			</div>
-
-		</div>
-		<div class="header__bg-img"><img src="./img/header/bg/bg-pc.png" alt=""></div>
-		<section id="myskills" class="scroll-link-fix">
-			<div class="container">
-
-				<div class="skills-content">
-					<div class="content-desc">
-						<h3 class="title-m title__skills">Что я умею:</h3>
-						<div class="skills__desc">
-							<ul class="desc__list">
-								<li>pixel perfect, полное соответствие макету.</li>
-								<li>верстаю с сеткой или без.</li>
-								<li>адаптивная верстка под мобильные устройства.</li>
-								<li>оптимизация под retina экраны.</li>
-								<li>с Bootstrap и без него.</li>
-							</ul>
+				<div class="main-content">
+					<div class="content-text">
+						<h1 class="content__logo"><span class="underline">Артем</span><span
+								class="underline logo-surname">Иванников</span></h1>
+						<div class="content__desc">
+							<p>Верстальщик сайтов, веб-разработчик. Оперативная верстка. Работаю с соблюдением сроков
+								и
+								выполнением ТЗ. </p>
 						</div>
 						<div class="content__btn">
-							<a href="#!" class=" btn content__btn-custom">Смотреть работы</a>
+							<a class="btn" href="#myskills">Познакомиться</a>
+							<a class="btn btn-outline" href="#!">Контакты</a>
 						</div>
 					</div>
-					<div class="content-icons">
-						<h3 class="title-m title__on-call">На связи:</h3>
-						<div class="skills__icons">
-							<a href="#!" class="fab fa-github icon-github"></a>
-							<a href="#!" class="fab fa-telegram icon-telegram"></a>
-							<a href="#!" class="fab fa-vk icon-vk"></a>
-							<a href="#!" class="fab fa-facebook icon-facebook"></a>
-						</div>
-						<div class="email"><a class="underline" href="mailto:xthemey@yandex.ru">xthemey@yandex.ru</a>
-						</div>
+
+					<div class=" content-pic">
+						<div class="image"><img src="./img/header/header-img.jpg" alt=""></div>
 					</div>
 				</div>
 
 			</div>
-		</section>
+			<div class="header__bg-img"><img src="./img/header/bg/bg-pc.png" alt=""></div>
+			<section id="myskills" class="scroll-link-fix">
+				<div class="container">
+
+					<div class="skills-content">
+						<div class="content-desc">
+							<h3 class="title-m title__skills">Что я умею:</h3>
+
+							<ul class="desc__list">
+								<li>Pixel perfect, полное соответствие макету.</li>
+								<li>Верстаю с сеткой или без.</li>
+								<li>Адаптивная верстка под мобильные устройства.</li>
+								<li>Оптимизация под retina экраны.</li>
+								<li>С Bootstrap и без него.</li>
+							</ul>
+
+							<div class="content__btn">
+								<a href="#!" class=" btn content__btn-custom">Смотреть работы</a>
+							</div>
+						</div>
+						<div class="content-icons">
+							<h3 class="title-m title__on-call">На связи:</h3>
+							<div class="skills__icons">
+								<a href="#!" class="fab fa-github icon-github"></a>
+								<a href="#!" class="fab fa-telegram icon-telegram"></a>
+								<a href="#!" class="fab fa-vk icon-vk"></a>
+								<a href="#!" class="fab fa-facebook icon-facebook"></a>
+							</div>
+							<div class="email"><a class="underline"
+									href="mailto:xthemey@yandex.ru">xthemey@yandex.ru</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
 	</header>
 	<section class="portfolio">
 		<div class="container">
@@ -149,7 +173,7 @@
 				</div>
 
 			</div>
-
+			<a class="projects-all underline" href="#!">Смотреть все работы</a>
 		</div>
 	</section>
 
@@ -262,9 +286,10 @@
 					<ul class="info-item">
 						<li class="info-flex"><span>Email</span><a href="mailto:xthemey@yandex.ru">xthemey@yandex.ru</a>
 						</li>
-						<li class="info-flex"><span>Discord</span><span id="discord">XTheme#4126</span></li>
+						<li class="info-flex"><span>Discord</span><span class="grey" id="discord">XTheme#4126</span>
+						</li>
 						<li class="info-flex"><span>Телефон</span><a href="tel:-78005553535">+7 (800) 555-35-35</a></li>
-						<li class="info-flex"><span>Адрес</span><span>Россия, Москваа</span></li>
+						<li class="info-flex"><span>Адрес</span><span class="grey">Россия, Москва</span></li>
 					</ul>
 
 					<div class="info-item skills__icons">
