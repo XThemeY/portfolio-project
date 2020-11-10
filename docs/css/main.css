@@ -1268,7 +1268,7 @@ header {
     padding-top: 126px;
     padding-bottom: 150px;
     background: center repeat-y url("../img/contacts/bg-line-blue.jpg");
-    background-color: transparent;
+    background-color: #f4f8f9;
   }
 }
 .contacts__title-b {
