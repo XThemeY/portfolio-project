@@ -90,7 +90,7 @@ $(document).ready(function () {
 		messages: {
 			form_email: {
 				required: 'Введите email',
-				email: 'отсутсвует символ @'
+				email: 'Отсутсвует символ @'
 			},
 			form_email_subject: {
 				required: 'Введите тему сообщения'
