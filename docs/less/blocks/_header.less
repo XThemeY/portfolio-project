@@ -18,7 +18,7 @@ header {
 }
 
 .nav-bar {
-    padding: 0px 15px;
+    padding: 0px 20px;
     min-height: 70px;
     display: flex;
     justify-content: space-between;
@@ -26,7 +26,7 @@ header {
     position: relative;
     max-width: 1430px;
     margin: 0 auto;
-    z-index: 100;
+    z-index: 60;
 
     @media (min-width: 1200px) {
         background: center repeat-y url(@bglines);
@@ -35,7 +35,7 @@ header {
 
 .scroll-link-fix {
     @media (min-width: 1200px) {
-        padding-top: 100px;
+        padding-top: 90px;
         margin-top: -100px;
     }
 }
@@ -87,7 +87,7 @@ header {
 
 .social-icons {
     display: none;
-    justify-content: center;
+
     a {
         font-size: 3rem;
         color: @black;
@@ -110,15 +110,15 @@ header {
 .main-content {
     display: flex;
     flex-direction: column-reverse;
-    margin-top: 30px;
+    margin-top: 20px;
 
     @media (min-width: 768px) {
+        margin-top: 102px;
         flex-direction: row;
         justify-content: space-between;
-        margin-top: 55px;
     }
     @media (min-width: 1200px) {
-        justify-content: flex-start;
+        margin-top: 238px;
     }
 }
 
@@ -173,50 +173,44 @@ header {
     }
 
     @media (min-width: 1200px) {
-        margin-bottom: 33px;
+        margin-bottom: 36px;
         p {
             font-size: 2.4rem;
-            line-height: 1.25;
+            line-height: 1.45;
         }
     }
 }
 
 .content-pic {
     @media (min-width: 768px) {
-        width: 48%;
-        display: flex;
-        justify-content: flex-end;
-
-        .image {
-            position: relative;
-
-            &:before {
-                content: "";
-                position: absolute;
-                top: 20%;
-                left: 20%;
-                width: 100%;
-                height: 100%;
-                background-image: linear-gradient(
-                    90deg,
-                    #f4f8f9 0%,
-                    rgba(244, 248, 249, 0) 100%
-                );
-                opacity: 0.5;
-                z-index: -1;
-            }
-            @media (min-width: 768px) {
-                padding-right: 25px;
-            }
-            @media (min-width: 1200px) {
-                &:before {
-                    top: 30%;
-                    left: 30%;
-                }
-                padding-right: 0;
-                margin-bottom: 33px;
-            }
+        width: 45%;
+        position: relative;
+        padding-right: 25px;
+        &:before {
+            content: "";
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(
+                90deg,
+                #f4f8f9 0%,
+                rgba(244, 248, 249, 0) 100%
+            );
+            opacity: 0.5;
+            z-index: -1;
         }
+    }
+
+    @media (min-width: 1200px) {
+        width: 40%;
+        &:before {
+            top: 30%;
+            left: 30%;
+        }
+        padding-right: 0;
+        margin-bottom: 33px;
     }
 }
 
@@ -277,12 +271,16 @@ header {
         li {
             position: relative;
             padding-left: 30px;
-            margin-bottom: 3px;
+
             &::before {
                 content: "\2014";
                 position: absolute;
                 left: 0px;
             }
+        }
+
+        li + li {
+            margin-top: 2px;
         }
     }
 }
@@ -304,7 +302,7 @@ header {
     }
 
     @media (min-width: 1200px) {
-        width: 33%;
+        width: 32%;
     }
 }
 
@@ -362,6 +360,9 @@ header {
     }
 
     @media (min-width: 1200px) {
+        a + a {
+            margin-left: 30px;
+        }
     }
 }
 
@@ -384,7 +385,7 @@ header {
 
 .side-menu {
     position: fixed;
-    padding-top: 125px;
+    padding-top: 60px;
     top: 0;
     right: -320px;
     width: 100%;
@@ -393,8 +394,14 @@ header {
     background-color: white;
     border-left: 2px solid rgb(231, 231, 231);
     transition: 0.5s ease-in-out;
+    z-index: 101;
     &.active {
         right: 0;
+    }
+    .toggle-menu {
+        position: absolute;
+        top: 10px;
+        left: 5px;
     }
 }
 
@@ -451,8 +458,8 @@ header {
 
 .side-menu__logo {
     position: absolute;
-    top: 70px;
-    left: 10px;
+    top: 10px;
+    left: 5px;
     margin-bottom: 10px;
     margin-left: 10px;
 }
@@ -480,4 +487,17 @@ header {
 
 .side-menu__title {
     margin-bottom: 10px;
+}
+
+.fix-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: white;
+    transition: 0.5s;
+    &.active {
+        box-shadow: 0 4px 2px -2px #d6d6d6;
+    }
 }

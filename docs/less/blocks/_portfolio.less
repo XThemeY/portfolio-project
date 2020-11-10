@@ -8,7 +8,7 @@
     }
     @media (min-width: 1200px) {
         padding-top: 95px;
-        padding-bottom: 115px;
+        padding-bottom: 85px;
     }
 }
 
@@ -30,7 +30,7 @@
     }
     @media (min-width: 1200px) {
         margin-bottom: 0;
-        font-size: 3.2rem;
+        font-size: 3.25rem;
     }
 }
 
@@ -41,7 +41,7 @@
     @media (min-width: 768px) {
     }
     @media (min-width: 1200px) {
-        font-size: 2.6rem;
+        font-size: 2.65rem;
         margin-bottom: 2px;
     }
 }
@@ -50,27 +50,21 @@
     display: none;
     justify-content: flex-start;
     margin-bottom: 45px;
-    user-select: none;
 
-    a {
+    button {
         font-size: 2.4rem;
         font-weight: 800;
         color: #8fa5ae;
-
+        font-family: @fr;
         &:hover {
             color: @linkActive;
         }
-    }
-
-    li {
-        &.project-active {
-            a {
-                color: @black;
-            }
+        &.control-active {
+            color: @black;
         }
     }
 
-    li + li {
+    button + button {
         margin-left: 45px;
     }
 
@@ -78,10 +72,9 @@
         display: flex;
     }
     @media (min-width: 1200px) {
-        a {
-            font-size: 2.8rem;
-        }
-        li + li {
+        font-size: 2.8rem;
+
+        button + button {
             margin-left: 80px;
         }
     }
