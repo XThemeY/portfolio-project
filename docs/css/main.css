@@ -222,6 +222,7 @@ button {
   color: #000000;
   font-size: 2.2rem;
   font-weight: 700;
+  overflow: hidden;
 }
 .btn.btn-outline {
   padding: 0px 37px;
@@ -403,30 +404,6 @@ button {
     display: block;
   }
 }
-#backTop {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  width: 60px;
-  height: 60px;
-  background-color: #000000;
-  border-radius: 50%;
-  opacity: 0.5;
-  transition: 0.5s;
-  z-index: 10;
-}
-#backTop a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  color: #fbdc4d;
-  font-size: 4rem;
-}
-#backTop:hover {
-  opacity: 1;
-}
 .btn_main--animate {
   position: relative;
   overflow: hidden;
@@ -453,6 +430,30 @@ button {
   100% {
     left: 102%;
   }
+}
+#backTop {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  width: 60px;
+  height: 60px;
+  background-color: #000000;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: 0.5s;
+  z-index: 10;
+}
+#backTop a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color: #fbdc4d;
+  font-size: 4rem;
+}
+#backTop:hover {
+  opacity: 1;
 }
 header {
   max-width: 1600px;
@@ -827,9 +828,9 @@ header {
   position: fixed;
   padding-top: 60px;
   top: 0;
-  right: -360px;
+  right: -320px;
   width: 100%;
-  max-width: 360px;
+  max-width: 320px;
   height: 100vh;
   background-color: white;
   border-left: 2px solid #e7e7e7;

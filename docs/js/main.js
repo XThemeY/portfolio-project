@@ -71,15 +71,19 @@ $(document).ready(function () {
 
 	//Fix-scroll and BackTop button
 	const fixMenu = document.querySelector('.fix-menu');
-	$('#backTop').hide();
-
-
-	$(window).scroll(function () {
+	window.addEventListener("scroll", function () {
 		if (this.pageYOffset > 10) {
 			fixMenu.classList.add('active');
 		} else {
 			fixMenu.classList.remove('active');
 		}
+	})
+
+
+
+	$('#backTop').hide();
+	$(window).scroll(function () {
+
 		if ($(this).scrollTop() > 200) {
 			$('#backTop').fadeIn();
 		} else {
@@ -190,5 +194,4 @@ $(document).ready(function () {
 	$('.phone').click(function () {
 		$(this).setCursorPosition(3); // set position number
 	});
-
 })

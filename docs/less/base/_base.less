@@ -172,7 +172,8 @@ p {
     @media (min-width: 768px) {
         font-size: 5.2rem;
     }
-
+    @media (min-width: 992px) {
+    }
     @media (min-width: 1200px) {
         &.underline {
             &::before {
@@ -208,11 +209,15 @@ button {
     padding: 0 15px;
     margin: 0 auto;
 
+    @media (min-width: 576px) {
+    }
+
     @media (min-width: 768px) {
         max-width: 708px;
         padding: 0;
     }
-
+    @media (min-width: 992px) {
+    }
     @media (min-width: 1200px) {
         max-width: 1140px;
     }
@@ -255,7 +260,7 @@ button {
     color: @btnLink;
     font-size: 2.2rem;
     font-weight: 700;
-
+    overflow: hidden;
     &.btn-outline {
         padding: 0px 37px;
         overflow: hidden;
@@ -452,32 +457,6 @@ button {
     }
 }
 
-#backTop {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    width: 60px;
-    height: 60px;
-    background-color: rgb(0, 0, 0);
-    border-radius: 50%;
-    opacity: 0.5;
-    transition: 0.5s;
-    z-index: 10;
-    a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-        color: @yellow;
-        font-size: 4rem;
-    }
-
-    &:hover {
-        opacity: 1;
-    }
-}
-
 .btn_main--animate {
     position: relative;
     overflow: hidden;
@@ -508,5 +487,31 @@ button {
     }
     100% {
         left: 102%;
+    }
+}
+
+#backTop {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: 0.5s;
+    z-index: 10;
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        color: @yellow;
+        font-size: 4rem;
+    }
+
+    &:hover {
+        opacity: 1;
     }
 }
