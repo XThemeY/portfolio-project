@@ -17,13 +17,30 @@ $(document).ready(function () {
 	})
 
 	//Menu-burger
-	const menuBurger = document.querySelector('.toggle-menu');
+	const menuBurger = document.querySelectorAll('.toggle-menu');
 	const sideMenu = document.querySelector('.side-menu');
 	const overlay = document.querySelector('#overlay');
 	const body = document.querySelector('body');
 
-	menuBurger.addEventListener('click', function () {
-		this.classList.toggle('active');
+
+	function menuBurgerToggle(type) {
+
+		if (type === "resize") {
+			for (let i = 0; i < menuBurger.length; i++) {
+				const element = menuBurger[i];
+				element.classList.remove('active');
+			}
+		} else {
+			for (let i = 0; i < menuBurger.length; i++) {
+				const element = menuBurger[i];
+				element.classList.toggle('active');
+			}
+		}
+
+	}
+
+	menuBurger[0].addEventListener('click', function () {
+		menuBurgerToggle('click');
 		sideMenu.classList.toggle('active');
 		overlay.classList.toggle('active');
 		body.classList.toggle('noScroll');
@@ -31,14 +48,14 @@ $(document).ready(function () {
 	})
 	//Скрыть по клику оверлея
 	overlay.addEventListener('click', function () {
-		menuBurger.classList.remove('active');
+		menuBurgerToggle('click');
 		sideMenu.classList.remove('active');
 		this.classList.remove('active');
 		body.classList.remove('noScroll');
 	})
 	sideMenu.addEventListener('click', function () {
+		menuBurgerToggle('click');
 		this.classList.remove('active');
-		menuBurger.classList.remove('active');
 		overlay.classList.remove('active');
 		body.classList.remove('noScroll');
 	})
@@ -46,23 +63,30 @@ $(document).ready(function () {
 	//Ресайз
 	window.addEventListener('resize', function () {
 		sideMenu.classList.remove('active');
-		menuBurger.classList.remove('active');
 		overlay.classList.remove('active');
 		body.classList.remove('noScroll');
+		menuBurgerToggle('resize');
 	})
 
 
-	//Fix-scroll
+	//Fix-scroll and BackTop button
 	const fixMenu = document.querySelector('.fix-menu');
+	$('#backTop').hide();
 
-	window.addEventListener('scroll', function () {
+
+	$(window).scroll(function () {
 		if (this.pageYOffset > 10) {
 			fixMenu.classList.add('active');
 		} else {
 			fixMenu.classList.remove('active');
 		}
-
+		if ($(this).scrollTop() > 200) {
+			$('#backTop').fadeIn();
+		} else {
+			$('#backTop').fadeOut();
+		}
 	})
+
 
 
 	//mixItUp
@@ -76,26 +100,32 @@ $(document).ready(function () {
 	//Валидация формы
 	$('#contacts__form').validate({
 		rules: {
-			form_email: {
+			Email: {
 				required: true,
 				email: true
 			},
-			form_email_subject: {
+			Phone: {
+				required: true,
+			},
+			Theme: {
 				required: true
 			},
-			form_text: {
+			Text: {
 				required: true
 			}
 		},
 		messages: {
-			form_email: {
+			Email: {
 				required: 'Введите email',
 				email: 'Отсутсвует символ @'
 			},
-			form_email_subject: {
+			Phone: {
+				required: 'Введите телефон'
+			},
+			Theme: {
 				required: 'Введите тему сообщения'
 			},
-			form_text: {
+			Text: {
 				required: 'Введите текст сообщения'
 			}
 		},
@@ -110,7 +140,7 @@ $(document).ready(function () {
 
 	function ajaxFormSubmit() {
 
-		let string = $("#contact-form").serialize(); // Соханяем данные введенные в форму в строку.
+		let string = $("#contacts__form").serialize(); // Соханяем данные введенные в форму в строку.
 
 		//Формируем ajax запрос
 		$.ajax({
@@ -120,7 +150,7 @@ $(document).ready(function () {
 
 			// Функция если все прошло успешно
 			success: function (html) {
-				$("#contact-form").slideUp(800);
+				$("#contacts__form").slideUp(800);
 				$('#answer').html(html);
 			}
 		});
@@ -128,4 +158,37 @@ $(document).ready(function () {
 		// Чтобы по Submit больше ничего не выполнялось - делаем возврат false чтобы прервать цепчку срабатывания остальных функций
 		return false;
 	}
+
+	//Nav-Page
+	$('#page-nav').onePageNav({
+		currentClass: 'active',
+		changeHash: false,
+		scrollSpeed: 750,
+		scrollThreshold: 0.5,
+		filter: '',
+		easing: 'swing',
+		begin: function () { },
+		end: function () { },
+		scrollChange: function ($currentListItem) { }
+	});
+
+	//валидация поля телефона 
+	$(".phone").mask("+7(999)999-99-99");
+	//ф-ция для позиции курсора
+	$.fn.setCursorPosition = function (pos) {
+		if ($(this).get(0).setSelectionRange) {
+			$(this).get(0).setSelectionRange(pos, pos);
+		} else if ($(this).get(0).createTextRange) {
+			var range = $(this).get(0).createTextRange();
+			range.collapse(true);
+			range.moveEnd('character', pos);
+			range.moveStart('character', pos);
+			range.select();
+		}
+	};
+	//ф-ция для позиции курсора для нашего поля phone
+	$('.phone').click(function () {
+		$(this).setCursorPosition(3); // set position number
+	});
+
 })
