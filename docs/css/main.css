@@ -1391,8 +1391,9 @@ header {
   }
 }
 .contacts {
-  padding-top: 50px;
+  padding-top: 68px;
   padding-bottom: 60px;
+  margin-top: -68px;
   background-color: #f4f8f9;
   overflow: hidden;
 }
