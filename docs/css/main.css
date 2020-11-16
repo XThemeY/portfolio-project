@@ -983,8 +983,9 @@ header {
 }
 .portfolio {
   background-color: #f4f8f9;
-  padding-top: 50px;
+  padding-top: 68px;
   padding-bottom: 95px;
+  margin-top: -68px;
 }
 @media (min-width: 768px) {
   .portfolio {
