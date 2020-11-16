@@ -194,4 +194,34 @@ $(document).ready(function () {
 	$('.phone').click(function () {
 		$(this).setCursorPosition(3); // set position number
 	});
+
+
+	//Всплывающая подсказка о копировании
+	var elementBtn = document.getElementById("discord_btn");
+	var elementSpan = document.getElementById("discord_spn")
+	var labelAlert = document.createElement('div');
+	elementBtn.addEventListener("click", copy_text);
+	elementSpan.addEventListener("click", triggerBtn)
+	labelAlert.classList.add('clpBoard-copy')
+	labelAlert.appendChild(document.createTextNode('Текст скопирован'));
+	elementBtn.appendChild(labelAlert);
+
+	function triggerBtn() {
+		$("#discord_btn").trigger("click");
+	}
+	function copy_text() {
+		labelAlert.style.opacity = "1";
+		setTimeout(function () {
+			labelAlert.style.opacity = "0";
+		}, 1500)
+
+		var copyText = document.getElementById("discord_spn");
+		var textArea = document.createElement("textarea");
+		textArea.value = copyText.textContent;
+		document.body.appendChild(textArea);
+		textArea.select();
+		document.execCommand("Copy");
+		textArea.remove();
+
+	}
 })

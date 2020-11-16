@@ -455,6 +455,32 @@ button {
 #backTop:hover {
   opacity: 1;
 }
+.clpBoard-copy {
+  pointer-events: none;
+  opacity: 0;
+  top: -5px;
+  left: 25px;
+  width: 100px;
+  margin: 0 auto;
+  padding: 5px 5px;
+  position: absolute;
+  background: #fbdc4d;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 1rem;
+  transition: 0.5s ease-in-out;
+}
+.clpBoard-copy:before {
+  pointer-events: none;
+  content: "";
+  border: solid transparent;
+  position: absolute;
+  right: 100%;
+  top: 3px;
+  border-right-color: #fbdc4d;
+  border-width: 9px;
+  margin-top: -1px;
+}
 header {
   max-width: 1600px;
   margin: 0 auto;
@@ -826,7 +852,7 @@ header {
 }
 .side-menu {
   position: fixed;
-  padding-top: 60px;
+  padding-top: 90px;
   top: 0;
   right: -320px;
   width: 100%;
@@ -844,6 +870,9 @@ header {
   position: absolute;
   top: 15px;
   right: 20px;
+}
+.side-menu .skills__icons a + a {
+  margin-left: 15px;
 }
 .toggle-menu {
   cursor: pointer;
@@ -893,27 +922,36 @@ header {
 }
 .side-menu__logo {
   position: absolute;
-  top: 10px;
+  top: 5px;
   left: 5px;
   margin-bottom: 10px;
   margin-left: 10px;
 }
 .side-menu__nav {
   margin-left: 10px;
+  margin-bottom: 20px;
 }
 .side-menu__nav li a {
-  font-size: 4rem;
+  font-size: 3rem;
   color: #000000;
   font-weight: 700;
 }
 .side-menu__nav li.underline::before {
-  height: 5px;
+  height: 1px;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  background-color: black;
+}
+.side-menu__nav li + li {
+  margin-top: 20px;
 }
 .side-menu__icons {
   margin-left: 10px;
 }
 .side-menu__title {
   margin-bottom: 10px;
+  font-size: 3rem;
 }
 .fix-menu {
   position: fixed;
@@ -949,7 +987,7 @@ header {
 }
 @media (min-width: 768px) {
   .portfolio__title-b {
-    margin-bottom: 45px;
+    margin-bottom: 36px;
   }
 }
 @media (min-width: 1200px) {
@@ -1129,6 +1167,7 @@ header {
 .timeline {
   padding-top: 50px;
   padding-bottom: 65px;
+  overflow: hidden;
 }
 @media (min-width: 768px) {
   .timeline {
@@ -1168,7 +1207,7 @@ header {
   .title-vs__timeline {
     font-size: 2.4rem;
     margin-bottom: 5px;
-    margin-left: auto;
+    margin-left: unset;
   }
 }
 @media (min-width: 1200px) {
@@ -1338,6 +1377,7 @@ header {
   padding-top: 50px;
   padding-bottom: 60px;
   background-color: #f4f8f9;
+  overflow: hidden;
 }
 @media (min-width: 768px) {
   .contacts {
@@ -1591,6 +1631,16 @@ header {
 .error {
   font-size: 1.4rem;
   color: red;
+}
+.copy-icon {
+  fill: grey;
+  width: 12px;
+}
+#discord_btn {
+  position: relative;
+}
+#discord_spn {
+  cursor: pointer;
 }
 .footer {
   padding-top: 35px;
