@@ -48,6 +48,7 @@ body {
 #overlay.active {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 99;
+  backdrop-filter: blur(3px);
 }
 a {
   display: inline-block;
@@ -484,7 +485,7 @@ button {
 header {
   max-width: 1600px;
   margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 73px;
   padding-bottom: 95px;
   overflow: hidden;
 }
@@ -712,11 +713,17 @@ header {
   margin-top: 25px;
   overflow: hidden;
 }
+@media (min-width: 560px) {
+  .header__bg-img {
+    transform: scale(1.2);
+    margin-top: -35px;
+    margin-bottom: 0px;
+  }
+}
 @media (min-width: 768px) {
   .header__bg-img {
     transform: scale(1);
     margin-top: -65px;
-    margin-bottom: 0px;
   }
 }
 @media (min-width: 1200px) {
@@ -758,8 +765,12 @@ header {
     margin-top: 2px;
   }
 }
+.content-desc {
+  margin-bottom: 30px;
+}
 @media (min-width: 768px) {
   .content-desc {
+    margin-bottom: 0px;
     width: 48%;
   }
 }
@@ -782,7 +793,12 @@ header {
   }
 }
 .title__on-call {
-  margin-bottom: 25px;
+  margin-bottom: 19px;
+}
+@media (min-width: 768px) {
+  .title__on-call {
+    margin-bottom: 25px;
+  }
 }
 @media (min-width: 1200px) {
   .title__on-call {
@@ -1395,11 +1411,11 @@ header {
 }
 .contacts__title-b {
   margin: 0 auto;
-  margin-bottom: 45px;
+  margin-bottom: 39px;
 }
 @media (min-width: 768px) {
   .contacts__title-b {
-    margin-bottom: 70px;
+    margin-bottom: 53px;
   }
 }
 @media (min-width: 1200px) {
@@ -1451,7 +1467,7 @@ header {
   }
 }
 .info-item {
-  margin-bottom: 25px;
+  margin-bottom: 37px;
 }
 .info-item:last-child {
   margin-bottom: 0px;
@@ -1462,7 +1478,7 @@ header {
 }
 @media (min-width: 768px) {
   .info-item {
-    margin-bottom: 35px;
+    margin-bottom: 28px;
   }
   .info-item p {
     font-size: 1.8rem;
@@ -1477,7 +1493,6 @@ header {
   }
 }
 .info-flex {
-  margin-bottom: 20px;
   font-size: 2rem;
   font-weight: 700;
 }
@@ -1502,8 +1517,8 @@ header {
   color: #ed574f;
 }
 @media (min-width: 768px) {
-  .info-flex {
-    margin-bottom: 0;
+  .info-flex + .info-flex {
+    margin-top: 4px;
   }
 }
 @media (min-width: 1200px) {

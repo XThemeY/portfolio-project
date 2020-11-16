@@ -109,7 +109,7 @@ $(document).ready(function () {
 				email: true
 			},
 			Phone: {
-				required: true,
+				required: false,
 			},
 			Theme: {
 				required: true
