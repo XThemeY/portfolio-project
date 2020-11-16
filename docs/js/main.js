@@ -224,4 +224,5 @@ $(document).ready(function () {
 		textArea.remove();
 
 	}
+
 })
