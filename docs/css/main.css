@@ -1659,6 +1659,11 @@ header {
 #discord_spn {
   cursor: pointer;
 }
+.form-item__star {
+  margin-bottom: 13px;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
 .footer {
   padding-top: 35px;
   padding-bottom: 40px;
