@@ -14,6 +14,6 @@
 ## Тестировать локально
 ```sh
 git clone https://github.com/XThemeY/portfolio-project.git
-cd doc
+cd docs
 ```
 Открыть index.html
